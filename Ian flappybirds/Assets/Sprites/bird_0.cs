@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class bird_0 : MonoBehaviour {
-    // Movement Speed
+    public GameObject canvasObject;
+    GameObject fridge;
     public float Speed = 2;
+    
 
     //Flap force
     public float force = 300;
@@ -30,12 +32,15 @@ public class bird_0 : MonoBehaviour {
             //Flap
             GetComponent<Rigidbody2D>().AddForce(Vector2.up*force);
         }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Flappy birds");
+        }
+    }
 
-	}
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        //restart
-        Application.LoadLevel(Application.loadedLevel);
+        canvasObject.SetActive(true);
+        
     }
 }

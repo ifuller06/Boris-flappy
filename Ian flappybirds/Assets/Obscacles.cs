@@ -7,6 +7,7 @@ public class Obscacles : MonoBehaviour
 
     public float Speed=0;
     public float timeBetweenReverse=0;
+    public float timeTillNextSpawn=10;
 
     // Use this for initialization
     void Start()  {
@@ -19,6 +20,7 @@ public class Obscacles : MonoBehaviour
 
     // Update is called once per frame
     void Update()   {
+
     }
 
 
